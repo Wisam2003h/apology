@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>wisam is shy to talk to you so she sent me instead</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #ffe6f0; /* Light pink background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        #initial-image {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            background-color: #f9a7c8; /* Slightly darker pink container */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        p {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ffdde9; /* Light pink button */
+            color: #f9a7c8; /* Darker pink text */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+            button:hover {
+                background-color: #f48fb1; /* Darker pink on hover */
+                color: #fff;
+            }
+
+        #message-container {
+            color: #fff;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        #final-image {
+            max-width: 200px;
+            display: none; /* Hidden initially */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <img id="initial-image" src="shy.jpg" alt="Shy Melody">
+
+    <div id="question-buttons" class="container">
+        <h2>are you so upset and blue?</h2>
+        <p>Choose how you feel:</p>
+        <button id="so-upset-btn">Sooo upset</button>
+        <button id="little-upset-btn">Just a lil bit upset</button>
+        <div id="message-container"></div>
+    </div>
+
+    <img id="final-image" src="tears.jpg" alt="Crying Melody">
+
+    <script>
+        const initialImage = document.getElementById('initial-image');
+        const questionButtons = document.getElementById('question-buttons');
+        const soUpsetBtn = document.getElementById('so-upset-btn');
+        const littleUpsetBtn = document.getElementById('little-upset-btn');
+        const messageContainer = document.getElementById('message-container');
+        const finalImage = document.getElementById('final-image');
+
+        soUpsetBtn.onclick = () => {
+            messageContainer.textContent = "I sat down and thought about everything, this mistake, and a previous ones.. and I'm really sorry, I'm deeply sorry from whole my heart.. so please please don't hate me? I'm learning day by day, trying to be better day by day.. and I'm sorry again i broke you even tho you were always a good friend.. I'll give you the time and space you need, and won't bring it up again but i just want you to know that i didn't meant it that way, and i don't think of you in that way, and i don't want to lose you, and I'm really sorry that i hurt you";
+            hideQuestionAndShowFinalImage();
+        };
+
+        littleUpsetBtn.onclick = () => {
+            messageContainer.textContent = "Thank you for not being so upset.. and I repeat my apology because i actually am really sorry that i hurt you and acted all that even tho you were a good friend all the time, I'm really sorry Mohammed, really deeply sorry... i sat down and thought about everything and I'm learning, trying to be and better, and i will give you the time and space you need.. so please don't hate me... please, please, please? i don't want to lose you and trust me i don't think of you in that way..";
+            hideQuestionAndShowFinalImage();
+        };
+
+        function hideQuestionAndShowFinalImage() {
+            setTimeout(() => {
+                questionButtons.style.display = 'none';
+                messageContainer.style.display = 'none';
+                initialImage.style.display = 'none';
+                finalImage.style.display = 'block';
+            }, 50000); // 70000 milliseconds = 70 seconds
+        }
+
+        // Show question and buttons after the initial image appears (after 1 second)
+        setTimeout(() => {
+            questionButtons.style.opacity = 1;
+        }, 1000);
+
+        // Hide question and buttons initially
+        questionButtons.style.opacity = 0;
+    </script>
+
+</body>
+</html>
